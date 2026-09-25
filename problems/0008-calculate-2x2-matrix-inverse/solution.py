@@ -12,8 +12,9 @@ def inverse_2x2(matrix) -> torch.Tensor | None:
     """
     m = torch.as_tensor(matrix, dtype=torch.float)
     if m.shape != (2,2):
-        raise ValueError("输入型号不匹配")
+        raise ValueError('不是2x2方阵')
     try:
         return torch.linalg.inv(m)
     except RuntimeError:
         return None
+
